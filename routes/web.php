@@ -3,40 +3,30 @@
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
+$jobs = [
+    [
+        'id' => 1,
+        'title' => 'Programming',
+        'salary' => '$55,000',
+    ],
+    [
+        'id' => 2,
+        'title' => 'Data Science',
+        'salary' => '$75,000',
+    ],
+];
+
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/jobs', function () {
-    return view('jobs', [
-        'jobs' => [
-            [
-                'id' => 1,
-                'title' => 'Programming',
-                'salary' => '$55,000',
-            ],
-            [
-                'id' => 2,
-                'title' => 'Data Science',
-                'salary' => '$75,000',
-            ],
-        ],
-    ]);
+Route::get('/jobs', function () use ($jobs) {
+
+    return view('jobs', ['jobs' => $jobs]);
 });
 
-Route::get('/jobs/{id}', function ($id) {
-    $jobs  = [
-        [
-            'id' => 1,
-            'title' => 'Programming',
-            'salary' => '$55,000',
-        ],
-        [
-            'id' => 2,
-            'title' => 'Data Science',
-            'salary' => '$75,000',
-        ],
-    ];
+Route::get('/jobs/{id}', function ($id) use ($jobs) {
+
 
     // There are multiple ways we can fetch the job 
 
