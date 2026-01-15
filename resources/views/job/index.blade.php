@@ -23,7 +23,7 @@
         @endforeach
     </ul>
 
-    <div>
+    <div class="mt-5">
         {{ $jobs->links() }}
     </div>
 </x-layout>

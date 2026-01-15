@@ -12,7 +12,7 @@ class Jobs extends Model
 
     use HasFactory;
     protected $table = "jobs_listing";
-    protected $fillable = ['title', 'salary'];
+    protected $fillable = ['employer_id', 'title', 'salary'];
 
     public function employer()
     {
