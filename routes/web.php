@@ -9,7 +9,11 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    return view('jobs', ['jobs' => Jobs::all()]);
+    // if i have disabled lazy loading  so i should eager load the data  
+    $jobs = Jobs::with("employer")->get(); // Like this 
+    // $jobs = Jobs::all(); // otherwise we can use this too
+
+    return view('jobs', ['jobs' => $jobs]);
 });
 
 Route::get('/jobs/{id}', function ($id) {
