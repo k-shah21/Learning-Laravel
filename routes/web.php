@@ -10,8 +10,9 @@ Route::get('/', function () {
 
 Route::get('/jobs', function () {
     // if i have disabled lazy loading  so i should eager load the data  
-    $jobs = Jobs::with("employer")->get(); // Like this 
+    // $jobs = Jobs::with("employer")->get(); // Like this 
     // $jobs = Jobs::all(); // otherwise we can use this too
+    $jobs = Jobs::with("employer")->paginate(4);
 
     return view('jobs', ['jobs' => $jobs]);
 });
