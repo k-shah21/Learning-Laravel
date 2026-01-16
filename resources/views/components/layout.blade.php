@@ -115,7 +115,9 @@
         <header class="relative bg-white after:pointer-events-none after:absolute after:inset-x-0 after:inset-y-0 after:border-y after:border-white/10">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 border-b border-b-gray-300 flex justify-between items-center">
                 <h1 class="text-3xl font-bold tracking-tight text-gray-800">{{$heading}}</h1>
-                <a href="/jobs/create" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-700 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-800 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 dark:hover:text-gray-200">Create Job</a>
+                <x-button href="/jobs/create">
+                    Create Job
+                </x-button>
             </div>
         </header>
         <main>
